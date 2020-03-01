@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    background-color: #17bdac;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.row {
+    display: flex;
+}
+
+.row-item {
+    display: flex;
+    height: 7rem;
+    width: 7rem;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.row-item:first-child,
+.row-item:nth-child(2) {
+    border-right: 0.7rem solid #0aa292;
+}
+
+.row:not(:last-of-type) {
+    border-bottom: 0.7rem solid #0aa292;
+}
+
+.game-piece {
+    width: 85px;
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
