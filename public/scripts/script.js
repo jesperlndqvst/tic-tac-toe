@@ -16,11 +16,7 @@ const handleClickEvent = e => {
     if (hasBeenChoosen) return;
     const gamePiece = rowItem.querySelector(`.game-piece.${player}`);
     gamePiece.classList.remove('hidden');
-    if (player === player1) {
-        player = player2;
-    } else {
-        player = player1;
-    }
+    player === player1 ? player = player2 : player = player1
 };
 
 container.addEventListener('click', handleClickEvent);
