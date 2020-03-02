@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,10 +8,22 @@
 
 body {
     display: flex;
+    flex-direction: column;
     background-color: #17bdac;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    font-family: 'Lato', sans-serif;
+}
+
+.winner-text {
+    font-size: 48px;
+    text-align: center;
+    padding: 1rem 0;
+    text-transform: uppercase;
+    color: #fff;
+    opacity: 0;
+    transition: all 0.3s ease;
 }
 
 .row {
