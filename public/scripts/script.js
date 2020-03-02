@@ -22,6 +22,7 @@ const winningCombos = [
 const init = () => {
     const gamePieces = document.querySelectorAll('.game-piece');
     gamePieces.forEach(gamePiece => gamePiece.classList.add('hidden'));
+    container.addEventListener('click', handleClickEvent);
     player = player1;
     pieceCounter = 0;
     endGameText = '';
@@ -34,8 +35,10 @@ const init = () => {
 const handleClickEvent = e => {
     const rowItem = e.target.closest('.row-item');
     if (!rowItem) return;
+
     const hasBeenChoosen = rowItem.querySelectorAll('.hidden').length < 2;
     if (hasBeenChoosen) return;
+
     const gamePiece = rowItem.querySelector(`.game-piece.${player}`);
     gamePiece.classList.remove('hidden');
     checkEndGame(player, parseInt(e.target.dataset.key));
@@ -43,17 +46,14 @@ const handleClickEvent = e => {
 };
 
 const checkEndGame = (player, key) => {
-    if (player === 'X') {
-        player1Score.push(key);
-    } else {
-        player2Score.push(key);
-    }
+    player === 'X' ? player1Score.push(key) : player2Score.push(key);
 
     checkWinner(player1Score);
     checkWinner(player2Score);
     checkDraw();
 
     if (endGame) {
+        container.removeEventListener('click', handleClickEvent);
         winnerText.textContent = endGameText;
         winnerText.style.opacity = 1;
         setTimeout(() => {
@@ -79,7 +79,5 @@ const checkDraw = () => {
         endGame = true;
     }
 };
-
-container.addEventListener('click', handleClickEvent);
 
 init();
