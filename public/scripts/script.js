@@ -1,6 +1,8 @@
+'use strict';
+
 const playerScore = document.querySelectorAll('.player-score');
 const container = document.querySelector('.container');
-const winnerText = document.querySelector('.winner-text');
+const scoreBoardText = document.querySelector('.score-board-text');
 let player;
 let player1Score;
 let player2Score;
@@ -20,4 +22,23 @@ const winningCombos = [
     [1, 5, 9],
     [3, 5, 7]
 ];
-
+const emojis = [
+    '😁',
+    '😆',
+    '😉',
+    '😍',
+    '😜',
+    '😎',
+    '😻',
+    '🙌',
+    '👍',
+    '👏',
+    '👊',
+    '🙌',
+    '🔥',
+    '✨',
+    '🍻',
+    '🍾',
+    '🥂',
+    '🎉'
+];

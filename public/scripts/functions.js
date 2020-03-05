@@ -1,3 +1,5 @@
+'use strict';
+
 const init = () => {
     const gamePieces = document.querySelectorAll('.game-piece');
     gamePieces.forEach(gamePiece => gamePiece.classList.add('hidden'));
@@ -5,12 +7,12 @@ const init = () => {
     setStartingPlayer();
     pieceCounter = 0;
     endGameText = '';
-    winnerText.style.opacity = 0;
     endGame = false;
     player1Score = [];
     player2Score = [];
     playerScore.forEach(player => player.classList.remove('active'));
     document.querySelector(`.player-${player}-score`).classList.add('active');
+    scoreBoardText.textContent = `${player}'s turn`;
 };
 
 const setStartingPlayer = () => {
@@ -61,6 +63,9 @@ const switchPlayer = () => {
     player === player1 ? (player = player2) : (player = player1);
     playerScore.forEach(player => player.classList.remove('active'));
     document.querySelector(`.player-${player}-score`).classList.add('active');
+    if (!endGame) {
+        scoreBoardText.textContent = `${player}'s turn`;
+    }
 };
 
 const checkEndGame = (player, key) => {
@@ -72,8 +77,7 @@ const checkEndGame = (player, key) => {
 
     if (endGame) {
         container.removeEventListener('click', handleClickEvent);
-        winnerText.textContent = endGameText;
-        winnerText.style.opacity = 1;
+        scoreBoardText.textContent = endGameText;
         setTimeout(() => {
             init();
         }, 3000);
@@ -84,7 +88,7 @@ const checkWinner = playerScore => {
     winningCombos.forEach(combo => {
         const isMatch = combo.every(item => playerScore.includes(item));
         if (isMatch) {
-            endGameText = `${player} Won!`;
+            endGameText = `${player} Won!${randomEmoji()}`;
             addToScoreBoard(player);
             endGame = true;
         }
@@ -98,5 +102,7 @@ const checkDraw = () => {
         endGame = true;
     }
 };
+
+const randomEmoji = () => emojis[Math.floor(Math.random() * emojis.length)];
 
 init();
