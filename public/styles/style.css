@@ -56,12 +56,12 @@ body {
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.16);
 }
 
-.winner-text {
-    font-size: 16px;
+.score-board-text {
+    display: block;
+    height: 4rem;
+    font-size: 20px;
     text-align: center;
     padding: 1rem 0;
-    opacity: 0;
-    transition: all 0.3s ease;
     color: #757575;
 }
 
@@ -106,6 +106,10 @@ body {
     .score-board {
         justify-content: center;
         padding: 0 20rem;
+    }
+
+    .score-board-text {
+        font-size: 32px;
     }
 
     .player-score {
