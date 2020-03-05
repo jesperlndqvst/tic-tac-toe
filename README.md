@@ -6,7 +6,7 @@ A simple version of the classic game tic tac toe. Built in html, css and vanilla
 2. Start playing!
 
 ## Preview
-<img src="https://i.imgur.com/gWxmq6o.jpg" width="33%" />
+<img src="https://i.imgur.com/80gdPr3.jpg" width="33%" />
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
