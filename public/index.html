@@ -4,9 +4,17 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./styles/style.css" />
+         <link rel="icon" href="./images/tic-tac-toe.svg" />
         <title>Tic Tac Toe</title>
     </head>
     <body>
+        <div class="score-board">
+            <div class="player-score-container">
+                <div class="player-score player-X-score">X<span>-</span></div>
+                <div class="player-score player-O-score">O<span>-</span></div>
+            </div>
+            <p class="winner-text">XO Won</p>
+        </div>
         <div class="container">
             <div class="row">
                 <div class="row-item" data-key="1">
@@ -50,7 +58,6 @@
                     <img class="game-piece X" src="./images/cross.svg" />
                 </div>
             </div>
-            <p class="winner-text">XO Won</p>
         </div>
         <script src="./scripts/script.js"></script>
     </body>
